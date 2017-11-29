@@ -9,7 +9,7 @@ pipeline {
         stage("build") {
             steps {
                 echo "${params.buildVersion}"
-                sh 'sudo rm -rf node-js-sample'
+                sh '[ -d "node-js-sample" ] && sudo rm -rf node-js-sample'
                 sh 'git clone https://github.com/durgadeviramadoss/node-js-sample.git'
             }
         }
